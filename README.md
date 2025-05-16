@@ -1,59 +1,95 @@
-# Task
+#  Employee Management Web App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
+A responsive **Angular + Bootstrap** web application for managing employee data with full **CRUD operations**.
 
-## Development server
+---
 
-To start a local development server, run:
+##  Features
 
-```bash
-ng serve
-```
+###  1. Login Page
+- Fields:
+  - **Email**
+  - **Password**
+- Validations:
+  - Required fields
+  - Proper email format
+- Behavior:
+  - On successful login, redirects to the Home page
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+###  2. Home Page
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+####  Employee List
+- Displays employee data as **Bootstrap cards**
+- Each card includes:
+  -  Name
+  -  Email
+  -  Salary
+  -  Image (centered & circular)
 
-```bash
-ng generate component component-name
-```
+####  CRUD Operations
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- **Create Employee**
+  - Opens a Bootstrap modal
+  - Reactive form with: Name, Email, Image URL, Salary
+  - Validations: Required, valid email, numeric salary
+  - On submit: stores data in **local storage** and refreshes list dynamically
 
-```bash
-ng generate --help
-```
+- **Read Employee**
+  - Fetches and displays data from local storage
 
-## Building
+- **Update Employee**
+  - Reuses the same modal/form component with pre-filled data
+  - Edits data and updates local storage
 
-To build the project run:
+- **Delete Employee**
+  - Deletes the selected employee and updates the view instantly
 
-```bash
-ng build
-```
+---
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+###  Search Functionality
+- A **search bar** filters employees by **name** or **email** in real time
 
-## Running unit tests
+---
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+##  Technology Stack
 
-```bash
-ng test
-```
+| Category         | Technology       |
+|------------------|------------------|
+| Frontend         | Angular +9       |
+| UI Styling       | Bootstrap 5      |
+| Forms            | Angular Reactive Forms |
+| Data Persistence | Local Storage (JSON simulation) |
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+##  UI/UX Highlights
 
-```bash
-ng e2e
-```
+- Fully responsive layout (mobile, desktop)
+- Bootstrap cards, modals, and form controls
+- Disabled submit button until form is valid
+- Centered "No Employees" message when list is empty
+- Clean and modern user interface
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+##  Functional Overview
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- All forms use Angular **Reactive Forms** with validation
+- Modals opened via Bootstrap (`data-bs-toggle`, `data-bs-target`)
+- Forms are reused for both Create and Update operations
+- Form state and submission handled dynamically
+- Error handling and inline validation feedback
+- Live updates with **no page reloads**
+
+---
+
+## Additional Features
+
+- SweetAlert2: This project uses the SweetAlert2 package to provide clean and user-friendly alert and confirmation dialogs, especially for delete confirmations.
+
+- NotFound Component: A dedicated 404 page component (NotFoundComponent) is implemented to gracefully handle undefined routes and improve user navigation  experience.
+
+##  Project Structure (Simplified)
+
