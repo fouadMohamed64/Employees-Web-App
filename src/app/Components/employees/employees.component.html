@@ -9,8 +9,8 @@
         </div>
 
         <div class="col-md col-12">
-            <input type="text" class="form-control" placeholder="Search Using Email Or Name" [(ngModel)]="filterText"
-                (input)="onFilter()" />
+            <input type="text" #inp class="form-control" placeholder="Search Using Email Or Name" [(ngModel)]="filterText"
+                (input)="onFilter(inp.value)" />
         </div>
 
         <div class="col-md-auto">

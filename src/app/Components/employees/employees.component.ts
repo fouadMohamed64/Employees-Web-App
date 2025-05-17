@@ -97,7 +97,8 @@ export class EmployeesComponent {
     });
   }
 
-  onFilter() {
+  onFilter(inputValue:string) {
+    this.filterText = inputValue.toLowerCase()
     this.filteredEmployees = this.employees.filter((employee: any) =>
       employee.name.toLowerCase().includes(this.filterText) || employee.email.toLowerCase().includes(this.filterText)
     );

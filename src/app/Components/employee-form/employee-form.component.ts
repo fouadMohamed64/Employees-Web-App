@@ -15,14 +15,14 @@ export class EmployeeFormComponent {
   @Output() formSubmit = new EventEmitter<any>();
 
   employeeForm!: FormGroup;
-
+  defaultImageURL:string = 'https://cdn.pixabay.com/photo/2016/11/14/17/39/person-1824147_640.png';
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.employeeForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      image: ['', Validators.required],
+      image: [this.defaultImageURL, Validators.required],
       salary: ['', Validators.required],
     });
 
